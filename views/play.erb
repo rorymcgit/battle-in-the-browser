@@ -1,6 +1,6 @@
 <html>
-  <div align="left">Player One: <%= @one %> VS Player Two: <%= @two %></div>
-  <div><%= @two %> HP: 100</div>
+  <div align="left">Player One: <%= @one.name %> VS Player Two: <%= @two.name %></div>
+  <div><%= @two.name %> HP: 100</div>
 
   <form action='/attack'>
     <input type='submit' value='Attack!'>

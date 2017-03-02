@@ -8,13 +8,7 @@ feature "#player", :plr do
     end
 
     scenario "attack reduces player 2's points" do
-      visit'/'
-      player1 = Player.new('Rory')
-      player2 = Player.new('Albert')
-      fill_in :player_one, with: player1.name
-      fill_in :player_two, with: player2.name
-      click_button('Fight!')
-      p player2.hp
+      sign_in_and_play
       expect{click_button('Attack!')}.to change{player2.hp}.by(-10)
     end
 
