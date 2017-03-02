@@ -12,7 +12,7 @@ describe Battle, :type => :feature do
       fill_in :player_one, with: 'Rory'
       fill_in :player_two, with: 'Albert'
       click_button('Fight!')
-      expect(page).to have_content("Player One: Rory Vs Player Two: Albert")
+      expect(page).to have_content("Player One: Rory VS Player Two: Albert")
     end
   end
 
@@ -22,7 +22,7 @@ describe Battle, :type => :feature do
       fill_in :player_one, with: 'Rory'
       fill_in :player_two, with: 'Albert'
       click_button('Fight!')
-      expect(page).to have_content("HP: 100")
+      expect(page).to have_content("Albert HP: 100")
     end
   end
 end
