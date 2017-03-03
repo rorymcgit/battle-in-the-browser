@@ -3,7 +3,7 @@ require 'game'
 describe Game do
   subject(:game) { Game.new(plyr1, plyr2) }
   let(:plyr1) { double("Player1", :hp => 60) }
-  let(:plyr2) { double("Player2") }
+  let(:plyr2) { double("Player2", :hp => 60) }
   let(:dead_plyr) {double("dead", :hp => 0)}
 
   describe '#attack' do
@@ -33,7 +33,13 @@ describe Game do
 
   describe "#over?" do
     it "returns true when game over" do
-      expect(Game.new(plyr1,dead_plyr).over?).to be true
+      rigged_game = Game.new(plyr1,dead_plyr)
+      expect(rigged_game.over?).to be true
+      expect(rigged_game.loser).to eq dead_plyr
+    end
+
+    it "returns false when players are alive" do
+      expect(game.over?).to be false
     end
   end
 

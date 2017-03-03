@@ -20,7 +20,15 @@ class Game
   end
 
   def over?
-    player1.hp <= 0 || player2.hp <= 0
+    losing_player.any?
+  end
+
+  def loser
+    losing_player.first
+  end
+
+  def losing_player
+    players.select { |p| p.hp <= 0 }
   end
 
 end
