@@ -2,31 +2,31 @@
 # So I can start to win a game of Battle,
 # I want my attack to reduce Player 2's HP
   describe Player do
-  subject(:natalia) { Player.new('Natalia') }
-  subject(:rory) { Player.new('Rory') }
+  subject(:mittens) { Player.new('Mittens') }
+  subject(:dave) { Player.new('Dave') }
 
   describe '#name' do
     it 'returns the name' do
-      expect(natalia.name).to eq 'Natalia'
+      expect(mittens.name).to eq 'Mittens'
     end
   end
 
   describe '#hit_points' do
     it 'returns the hit points' do
-      expect(natalia.hp).to eq(100) # CHANGE WHEN CONSTANT INTRODUCED
+      expect(mittens.hp).to eq(100) # CHANGE WHEN CONSTANT INTRODUCED
     end
   end
 
   describe '#attack' do
     it 'damages the player' do
-      expect(rory).to receive(:receive_damage)
-      natalia.attack(rory)
+      expect(dave).to receive(:receive_damage)
+      mittens.attack(dave)
     end
   end
 
   describe '#receive_damage' do
     it 'reduces the player hit points' do
-      expect { natalia.receive_damage }.to change { natalia.hp }.by(-10)
+      expect { mittens.receive_damage }.to change { mittens.hp }.by(-10)
     end
   end
 end
