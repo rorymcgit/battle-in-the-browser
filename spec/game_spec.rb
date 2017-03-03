@@ -10,5 +10,4 @@ describe Game do
       game.attack(plyr)
     end
   end
-
 end
