@@ -38,4 +38,11 @@ describe Battle, :type => :feature do
     click_button("Back")
     expect(page).to have_content("Mittens : HP90")
   end
+
+  scenario "after attacking, switch turns" do
+    sign_in_and_play
+    click_button("Attack!")
+    click_button("Back")
+    expect(page).to have_content("Mittens's turn to attack.")
+  end
 end

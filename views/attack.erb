@@ -1,8 +1,9 @@
 <div>
   <h1><%= @game.current_player.name %> attacked <%= @game.opponent.name %>!</h1>
-  <div><%= @game.player1.name %> : HP<%=  @game.player1.hp %> </div>
+  <div><%= @game.player1.name %> : HP<%=  @game.player1.hp %></div>
   <div><%= @game.player2.name %> : HP<%=  @game.player2.hp %></div>
-  <form action='/play'>
+
+  <form method="POST" action='/back'>
     <input type='submit' value='Back'>
   </form>
 </div>
