@@ -43,6 +43,18 @@ describe Battle, :type => :feature do
     sign_in_and_play
     click_button("Attack!")
     click_button("Back")
+    expect(page).not_to have_content("Dave's turn to attack.")
     expect(page).to have_content("Mittens's turn to attack.")
   end
+
+  scenario "Shows 'good luck next time' when i reach 0HP" do
+    sign_in_and_play
+    18.times do
+      click_button("Attack!")
+      click_button("Back")
+    end
+    click_button("Attack!")
+    expect(page).to have_content("Mittens: Good Luck next time")
+  end
+
 end

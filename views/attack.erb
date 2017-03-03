@@ -3,7 +3,14 @@
   <div><%= @game.player1.name %> : HP<%=  @game.player1.hp %></div>
   <div><%= @game.player2.name %> : HP<%=  @game.player2.hp %></div>
 
+<%if @game.over? %>
+<p><%= @game.opponent.name %>: Good Luck next time</p>
+<form method="GET" action='/'>
+  <input type='submit' value='Restart'>
+</form>
+<% else%>
   <form method="POST" action='/back'>
     <input type='submit' value='Back'>
   </form>
 </div>
+<% end %>

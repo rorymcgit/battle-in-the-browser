@@ -19,4 +19,8 @@ class Game
     @opponent = players.select { |p| p != current_player }.first
   end
 
+  def over?
+    player1.hp <= 0 || player2.hp <= 0
+  end
+
 end

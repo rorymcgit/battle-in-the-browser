@@ -2,8 +2,9 @@ require 'game'
 
 describe Game do
   subject(:game) { Game.new(plyr1, plyr2) }
-  let(:plyr1) { double("Player1") }
+  let(:plyr1) { double("Player1", :hp => 60) }
   let(:plyr2) { double("Player2") }
+  let(:dead_plyr) {double("dead", :hp => 0)}
 
   describe '#attack' do
     it 'damages the player' do
@@ -29,4 +30,12 @@ describe Game do
       expect(game.opponent).to be(plyr1)
     end
   end
+
+  describe "#over?" do
+    it "returns true when game over" do
+      expect(Game.new(plyr1,dead_plyr).over?).to be true
+    end
+  end
+
+
 end
