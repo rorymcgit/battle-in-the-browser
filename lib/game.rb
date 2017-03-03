@@ -10,6 +10,10 @@ class Game
     @opponent = player2
   end
 
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
   def attack(player)
     player.receive_damage
   end
