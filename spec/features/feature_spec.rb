@@ -9,21 +9,20 @@ describe Battle, :type => :feature do
 
     it "should allow 2 players to enter names, submit, store as param and show their names" do
       sign_in_and_play
-      expect(page).to have_content("Player One: Rory VS Player Two: Natalia")
+      expect(page).to have_content("Player One: Dave VS Player Two: Mittens")
     end
   end
 
   feature "Hit points" do
     it "should show a player's hit points" do
       sign_in_and_play
-      expect(page).to have_content("Natalia HP: 100")
+      expect(page).to have_content("Mittens HP: 100")
     end
   end
 
   scenario "attack reduces player 2's points" do
-    # p $player_two
     sign_in_and_play
-    expect{click_button('Attack!')}.to change{$player_two.hp}.by -10
-    # p $player_two
+    click_button("Attack!")
+    expect(page).to have_content("Dave attacked Mittens!")
   end
 end
