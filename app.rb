@@ -4,7 +4,9 @@ require_relative 'lib/game'
 
 class Battle < Sinatra::Base
 
-  # enable :sessions
+  before do
+    @game = Game.instance
+  end
 
   get '/' do
     erb(:index)
@@ -18,18 +20,15 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-    @game = Game.instance
     erb(:play)
   end
 
   get '/attack' do
-    @game = Game.instance
     @game.attack(@game.opponent)
     erb(:attack)
   end
 
   post '/back' do
-    @game = Game.instance
     @game.switch_turn
     redirect('/play')
   end

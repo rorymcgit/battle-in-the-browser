@@ -54,7 +54,7 @@ describe Battle, :type => :feature do
       click_button("Back")
     end
     click_button("Attack!")
-    expect(page).to have_content("Mittens: Better Luck next time")
+    expect(page).to have_content("Mittens: Better luck next time")
   end
 
 end

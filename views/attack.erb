@@ -4,7 +4,7 @@
   <div><%= @game.player2.name %> : HP<%=  @game.player2.hp %></div>
 
   <%if @game.over? %>
-    <p><%= @game.loser.name %>: Better Luck next time</p>
+    <p><%= @game.loser.name %>: Better luck next time</p>
     <form method="GET" action='/'>
       <input type='submit' value='Restart'>
     </form>
