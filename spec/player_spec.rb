@@ -1,7 +1,5 @@
-# As Player 1,
-# So I can start to win a game of Battle,
-# I want my attack to reduce Player 2's HP
-  describe Player do
+
+describe Player do
   subject(:mittens) { Player.new('Mittens') }
   subject(:dave) { Player.new('Dave') }
 
@@ -13,7 +11,7 @@
 
   describe '#hit_points' do
     it 'returns the hit points' do
-      expect(mittens.hp).to eq(100) # CHANGE WHEN CONSTANT INTRODUCED
+      expect(mittens.hp).to eq(100)
     end
   end
 

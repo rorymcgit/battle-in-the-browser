@@ -42,6 +42,4 @@ describe Game do
       expect(game.over?).to be false
     end
   end
-
-
 end

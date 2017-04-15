@@ -1,5 +1,4 @@
 
-
 describe Battle, :type => :feature do
   feature "Name input" do
     it "should return \"Let's battle!\"" do
@@ -56,5 +55,4 @@ describe Battle, :type => :feature do
     click_button("Attack!")
     expect(page).to have_content("Mittens: Better luck next time")
   end
-
 end
