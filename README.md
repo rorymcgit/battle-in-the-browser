@@ -4,7 +4,7 @@
 
 In week 3 of Makers Academy we were tasked with making a simple 2 player turn-based browser game using the Model-View-Controller (MVC) design pattern.  
   
-I used Sinatra to handle routing, Ruby for game logic and Capybara to automate browser tasks for full feature testing with RSpec.
+I used Sinatra to handle routing, Ruby for game logic and Capybara to automate browser tasks for feature testing with RSpec.
 
 Instructions for use:
 - Clone this repo
