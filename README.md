@@ -1,4 +1,4 @@
-# Makers Academy - Battle in the browser challenge (Week 3)
+# Battle in the browser
 
 ![Image of Battle](https://github.com/rorymcgit/battle-sinatra/blob/master/Battle_Screengrab.png)
 
